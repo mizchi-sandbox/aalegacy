@@ -1,4 +1,4 @@
-import assert from "assert";
+// import assert from "assert";
 // import dep from "./dep";
 // @ts-ignore
 // import "promise-polyfill/dist/polyfill";
@@ -13,5 +13,6 @@ async function foo() {
 
 it("x", async () => {
   const ret = await foo();
-  assert.ok(ret === 1);
+  console.log(ret);
+  // assert.ok(ret === 1);
 });

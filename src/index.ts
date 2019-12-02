@@ -14,4 +14,6 @@ async function run() {
   // assert.ok(ret === 1);
 }
 
+const p = Promise.resolve();
+
 run();
