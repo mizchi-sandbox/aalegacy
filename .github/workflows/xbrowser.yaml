@@ -1,6 +1,5 @@
 name: xbrowser
 on: [push]
-
 jobs:
   e2e-ie:
     runs-on: windows-latest

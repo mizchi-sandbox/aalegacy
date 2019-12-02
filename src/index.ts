@@ -1,12 +1,17 @@
-// import "./pre";
+// import assert from "assert";
+// import dep from "./dep";
 // @ts-ignore
-import Promise from "promise-polyfill";
+// import "promise-polyfill/dist/polyfill";
+// import Promise from "promise-polyfill";
 
-console.log(globalThis.Promise === Promise);
+async function foo() {
+  return 1;
+}
 
-// console.log(Promise.resolve);
+async function run() {
+  const ret = await foo();
+  console.log(ret);
+  // assert.ok(ret === 1);
+}
 
-(async function() {
-  await Promise.resolve();
-  console.log("done");
-})();
+run();
