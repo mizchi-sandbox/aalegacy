@@ -6,16 +6,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: warrenbuckley/Setup-Nuget@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: nuget install Selenium.WebDriver.IEDriver -Version 3.150.0
+      # - uses: warrenbuckley/Setup-Nuget@v1
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12
+      # - run: nuget install Selenium.WebDriver.IEDriver -Version 3.150.0
       - run: yarn install
       # - run: npm run bootstrap
       # - run: npm run build:clean
-      - run: yarn build
-        shell: bash
+      # - run: yarn build
+      #   shell: bash
       - run: npm run test:browser -- --browsers ie_no_addons
       # - run: npm run test:e2e
       #   env:

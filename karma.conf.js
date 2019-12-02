@@ -1,4 +1,11 @@
 var webpackConfig = require("./webpack.config");
+const customLaunchers = {
+  ie_no_addons: {
+    base: "IE",
+    flags: ["-extoff"]
+  }
+};
+
 module.exports = function(config) {
   config.set({
     mime: {
@@ -23,6 +30,7 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ["Chrome"],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
+    customLaunchers
   });
 };
