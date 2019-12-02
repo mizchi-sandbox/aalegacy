@@ -16,7 +16,7 @@ jobs:
       # - run: npm run build:clean
       # - run: yarn build
       #   shell: bash
-      - run: npm run test:browser -- --browsers ie_no_addons
+      - run: npm run test:browser:ie
       # - run: npm run test:e2e
       #   env:
       #     BROWSER: ie
