@@ -1,0 +1,68 @@
+name: xbrowser
+on: [push]
+
+jobs:
+  e2e-ie:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: warrenbuckley/Setup-Nuget@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: nuget install Selenium.WebDriver.IEDriver -Version 3.150.0
+      - run: yarn install
+      # - run: npm run bootstrap
+      # - run: npm run build:clean
+      - run: yarn build
+        shell: bash
+      - run: npm run test:browser -- --browsers ie_no_addons
+      # - run: npm run test:e2e
+      #   env:
+      #     BROWSER: ie
+  # e2e-firefox:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - run: npm install
+  #     - run: npm run bootstrap
+  #     - run: npm run build
+  #       shell: bash
+  #     - run: npm run test:browser -- --browsers Firefox
+  #     - run: npm run test:e2e
+  #       env:
+  #         BROWSER: firefox
+  # e2e-chrome:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - run: npm install
+  #     - run: npm run bootstrap
+  #     - run: npm run build:clean
+  #     - run: npm run build
+  #       shell: bash
+  #     - run: npm run test:browser -- --browsers Chrome
+  #     - run: npm run test:e2e
+  #       env:
+  #         BROWSER: chrome
+  # e2e-chrome-native:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - run: npm install
+  #     - run: npm run bootstrap
+  #     - run: npm run build:clean
+  #     - run: npm run build
+  #       shell: bash
+  #     - run: npm run test:e2e-native
+  #       env:
+  #         BROWSER: chrome
