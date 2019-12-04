@@ -1,4 +1,15 @@
 module.exports = {
-  presets: ["@babel/preset-env", "@babel/preset-typescript"],
-  plugins: [["@babel/transform-runtime", { corejs: false, regenerator: true }]]
+  sourceType: "unambiguous",
+  presets: [
+    [
+      "@babel/preset-env",
+      {
+        modules: false,
+        useBuiltIns: "usage",
+        corejs: 3
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  plugins: [["@babel/transform-runtime", { corejs: 3, regenerator: true }]]
 };

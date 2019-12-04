@@ -1,7 +1,11 @@
 module.exports = {
+  target: "node",
   resolve: {
     extensions: [".ts", ".js"]
   },
+  // output: {
+  //   libraryTarget: "commonjs"
+  // },
   module: {
     rules: [
       {

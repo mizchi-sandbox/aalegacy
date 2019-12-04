@@ -1,12 +1,12 @@
-// import "./pre";
-// @ts-ignore
-import Promise from "promise-polyfill";
+import { ok } from "assert";
 
-console.log(globalThis.Promise === Promise);
+async function foo() {
+  return 1;
+}
 
-// console.log(Promise.resolve);
+async function run() {
+  const ret = await foo();
+  ok(ret === 1);
+}
 
-(async function() {
-  await Promise.resolve();
-  console.log("done");
-})();
+run();

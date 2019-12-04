@@ -1,4 +1,5 @@
 var webpackConfig = require("./webpack.config");
+
 const customLaunchers = {
   ie_no_addons: {
     base: "IE",
@@ -28,7 +29,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["Chrome"],
+    browsers: ["ChromeHeadless"],
     singleRun: false,
     concurrency: Infinity,
     customLaunchers
