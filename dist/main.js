@@ -3174,7 +3174,7 @@ function run() {
 
         case 2:
           ret = _context2.sent;
-          Object(assert__WEBPACK_IMPORTED_MODULE_4__["ok"])(ret === 2);
+          Object(assert__WEBPACK_IMPORTED_MODULE_4__["ok"])(ret === 1);
 
         case 4:
         case "end":

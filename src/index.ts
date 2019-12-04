@@ -6,7 +6,7 @@ async function foo() {
 
 async function run() {
   const ret = await foo();
-  ok(ret === 2);
+  ok(ret === 1);
 }
 
 run();
